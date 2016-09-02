@@ -7,13 +7,23 @@ Baixar o zip ``jboss-eap-6.4.0.zip`` do site da Red Hat na mesma pasta
 
 
     docker build -t "jboss:6.4" .
-    docker run -it -p 8080:8080 -p 9990:9990 --name jboss_6 jboss:6.4
+    docker run -it -p 8080:8080 -p 9990:9990 -p 2222:22 --name jboss_6 jboss:6.4
 
+Pegar a senha do root:
+
+    docker exec -it jboss_6 cat /pass_root
     
+Acessar o container vai ssh
+
+    ssh -p 2222 root@<host>
+
+É possivel trocar a senha do root:
+
+    passwd root
+
+
 Acessar: http://\<host\>:8080/
 
-Para adicionar um usuario Administrador:
-
-    docker exec -it jboss_6 ./jboss-eap-7.0/bin/add-user.sh
-
-Acessar: http://\<host\>:9990/
+Acessar para Console Administrativo: http://\<host\>:9990/
+Usuario: jboss
+Senha; jb0ss@dmin
