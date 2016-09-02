@@ -25,5 +25,5 @@ Acessar o container vai ssh
 Acessar: http://\<host\>:8080/
 
 Acessar para Console Administrativo: http://\<host\>:9990/ <br />
-Usuario: jboss <br />
-Senha: jb0ss@dmin
+**Usuario:** jboss <br />
+**Senha:** jb0ss@dmin
